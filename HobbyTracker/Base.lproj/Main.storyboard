@@ -70,7 +70,7 @@
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="omK-5h-Zy7">
                                 <connections>
-                                    <segue destination="LTe-up-fVd" kind="presentation" id="uMG-mJ-Qhi"/>
+                                    <segue destination="LTe-up-fVd" kind="presentation" identifier="AddFriendModalSegue" id="uMG-mJ-Qhi"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="Test" id="2Im-A5-qKE">
@@ -260,7 +260,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lJt-xU-HYK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="829" y="-406"/>
+            <point key="canvasLocation" x="812" y="-410"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="h7U-6s-hYy">

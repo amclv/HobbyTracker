@@ -20,17 +20,22 @@ class FriendsTableViewController: UIViewController {
         tableView.dataSource = self
     }
     
-
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "AddFriendModalSegue" {
+            
+            guard let addFriendVC = segue.destination as?
+                AddFriendViewController else { return }
+            
+            // sets up the tvc as the delegate (or "employee") of the add friend view controller.
+            addFriendVC.delegate = self
+        }
     }
-    */
-
 }
 
 extension FriendsTableViewController: UITableViewDelegate, UITableViewDataSource {
@@ -51,5 +56,12 @@ extension FriendsTableViewController: UITableViewDelegate, UITableViewDataSource
         
         // just return the cell
         return cell
+    }
+}
+
+extension FriendsTableViewController: AddFriendDelegate {
+    func friendWasCreated(friend: Person) {
+        friends.append(friend)
+        tableView.reloadData()
     }
 }
