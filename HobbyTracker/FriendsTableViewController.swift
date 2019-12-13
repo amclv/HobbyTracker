@@ -12,7 +12,7 @@ class FriendsTableViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var friends: [Person] = []
+    var friends: [Friend] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +34,16 @@ class FriendsTableViewController: UIViewController {
             
             // sets up the tvc as the delegate (or "employee") of the add friend view controller.
             addFriendVC.delegate = self
+        } else if segue.identifier == "ShowFriendDetailSegue" {
+            
+            guard let friendDetailVC = segue.destination as?
+                FriendDetailViewController else { return }
+            
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let friend = friends[indexPath.row]
+                
+                friendDetailVC.friend = friend
+            }
         }
     }
 }
@@ -60,7 +70,7 @@ extension FriendsTableViewController: UITableViewDelegate, UITableViewDataSource
 }
 
 extension FriendsTableViewController: AddFriendDelegate {
-    func friendWasCreated(friend: Person) {
+    func friendWasCreated(friend: Friend) {
         friends.append(friend)
         tableView.reloadData()
     }

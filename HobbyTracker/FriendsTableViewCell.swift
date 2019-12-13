@@ -14,7 +14,7 @@ class FriendsTableViewCell: UITableViewCell {
     @IBOutlet weak var hometownLabel: UILabel!
     @IBOutlet weak var hobbyCountLabel: UILabel!
     
-    var friend: Person? {
+    var friend: Friend? {
         // property observer - calls the code in the  { } whenever the value of friend is set
         didSet {
             updateViews()

@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5D2567F223A2BADB00BBBD8C /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2567F123A2BADB00BBBD8C /* Person.swift */; };
+		1AEBB29223A35CD3007A4D9D /* FriendDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEBB29123A35CD3007A4D9D /* FriendDetailViewController.swift */; };
+		5D2567F223A2BADB00BBBD8C /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2567F123A2BADB00BBBD8C /* Friend.swift */; };
 		5D2567F623A2C0DA00BBBD8C /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2567F523A2C0DA00BBBD8C /* FriendsTableViewController.swift */; };
 		5D2567F823A2C32F00BBBD8C /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2567F723A2C32F00BBBD8C /* FriendsTableViewCell.swift */; };
 		5D483F0C23A2F7B500B04D40 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D483F0B23A2F7B500B04D40 /* AddFriendViewController.swift */; };
@@ -19,7 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5D2567F123A2BADB00BBBD8C /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		1AEBB29123A35CD3007A4D9D /* FriendDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDetailViewController.swift; sourceTree = "<group>"; };
+		5D2567F123A2BADB00BBBD8C /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		5D2567F523A2C0DA00BBBD8C /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		5D2567F723A2C32F00BBBD8C /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
 		5D483F0B23A2F7B500B04D40 /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
@@ -77,8 +79,9 @@
 				5D9D703123A00A2300ECD3B9 /* Main.storyboard */,
 				5D2567F723A2C32F00BBBD8C /* FriendsTableViewCell.swift */,
 				5D483F0B23A2F7B500B04D40 /* AddFriendViewController.swift */,
+				1AEBB29123A35CD3007A4D9D /* FriendDetailViewController.swift */,
 				5D2567F523A2C0DA00BBBD8C /* FriendsTableViewController.swift */,
-				5D2567F123A2BADB00BBBD8C /* Person.swift */,
+				5D2567F123A2BADB00BBBD8C /* Friend.swift */,
 				5D9D703923A00A2800ECD3B9 /* Info.plist */,
 			);
 			path = HobbyTracker;
@@ -157,10 +160,11 @@
 			files = (
 				5D483F0C23A2F7B500B04D40 /* AddFriendViewController.swift in Sources */,
 				5D9D702C23A00A2300ECD3B9 /* AppDelegate.swift in Sources */,
-				5D2567F223A2BADB00BBBD8C /* Person.swift in Sources */,
+				5D2567F223A2BADB00BBBD8C /* Friend.swift in Sources */,
 				5D2567F823A2C32F00BBBD8C /* FriendsTableViewCell.swift in Sources */,
 				5D9D702E23A00A2300ECD3B9 /* SceneDelegate.swift in Sources */,
 				5D2567F623A2C0DA00BBBD8C /* FriendsTableViewController.swift in Sources */,
+				1AEBB29223A35CD3007A4D9D /* FriendDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

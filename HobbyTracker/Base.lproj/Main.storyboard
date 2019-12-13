@@ -57,7 +57,7 @@
                                     <outlet property="hobbyCountLabel" destination="69h-HA-OnD" id="ofY-FG-sXf"/>
                                     <outlet property="hometownLabel" destination="Hfi-kw-eZ1" id="eTO-41-nF8"/>
                                     <outlet property="nameLabel" destination="Evl-yc-IgF" id="sb7-Hg-y6G"/>
-                                    <segue destination="iRD-SD-z5a" kind="show" id="Tos-2e-tS9"/>
+                                    <segue destination="iRD-SD-z5a" kind="show" identifier="ShowFriendDetailSegue" id="Tos-2e-tS9"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -67,18 +67,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="XDZ-hq-iqI">
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="add" id="omK-5h-Zy7">
-                                <connections>
-                                    <segue destination="LTe-up-fVd" kind="presentation" identifier="AddFriendModalSegue" id="uMG-mJ-Qhi"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Test" id="2Im-A5-qKE">
-                                <connections>
-                                    <segue destination="iRD-SD-z5a" kind="show" id="OXB-qC-d3O"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="omK-5h-Zy7">
+                            <connections>
+                                <segue destination="LTe-up-fVd" kind="presentation" identifier="AddFriendModalSegue" id="uMG-mJ-Qhi"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Ac3-zN-A92" id="19G-2R-09c"/>
@@ -88,10 +81,10 @@
             </objects>
             <point key="canvasLocation" x="-20" y="-9"/>
         </scene>
-        <!--View Controller-->
+        <!--Friend Detail View Controller-->
         <scene sceneID="uQR-ae-ox2">
             <objects>
-                <viewController id="iRD-SD-z5a" sceneMemberID="viewController">
+                <viewController id="iRD-SD-z5a" customClass="FriendDetailViewController" customModule="HobbyTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2xH-Lg-3Le">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -123,7 +116,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dYR-5X-X4O" userLabel="1">
                                 <rect key="frame" x="20" y="314" width="374" height="528"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egR-Sf-3Ap">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hobbies:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egR-Sf-3Ap">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="33.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <nil key="textColor"/>
@@ -155,6 +148,12 @@
                         <viewLayoutGuide key="safeArea" id="evW-Qe-rl0"/>
                     </view>
                     <navigationItem key="navigationItem" id="79g-bp-Mfu"/>
+                    <connections>
+                        <outlet property="hobbiesTextField" destination="g2m-nb-FcU" id="aGq-Ad-AnT"/>
+                        <outlet property="hometownLabel" destination="u6v-Dq-pMl" id="5Pi-jk-WOK"/>
+                        <outlet property="nameLabel" destination="Ypa-DZ-WlX" id="bw3-PB-5UK"/>
+                        <outlet property="pictureImageView" destination="N6d-im-MZA" id="fMe-q4-c2q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LPf-1m-Alp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -218,10 +217,10 @@
                                             <rect key="frame" x="20" y="12" width="48" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Cancel"/>
+                                            <connections>
+                                                <action selector="cancelTapped:" destination="LTe-up-fVd" eventType="touchUpInside" id="sWz-i8-sRw"/>
+                                            </connections>
                                         </button>
-                                        <connections>
-                                            <action selector="cancelTapped:" destination="LTe-up-fVd" id="GYJ-s8-FHr"/>
-                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="B1C-AL-2QP"/>
                                     <barButtonItem style="plain" id="BBR-q0-UWk">
@@ -229,10 +228,10 @@
                                             <rect key="frame" x="360" y="12" width="34" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Save"/>
+                                            <connections>
+                                                <action selector="saveTapped:" destination="LTe-up-fVd" eventType="touchUpInside" id="ym6-w1-oEc"/>
+                                            </connections>
                                         </button>
-                                        <connections>
-                                            <action selector="saveTapped:" destination="LTe-up-fVd" id="Dxc-MU-9a2"/>
-                                        </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
@@ -284,7 +283,4 @@
     <resources>
         <image name="person.fill" catalog="system" width="64" height="60"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="OXB-qC-d3O"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -10,7 +10,7 @@ import UIKit
 
 protocol AddFriendDelegate {
     // we will pass the friend that was created into this function.
-    func friendWasCreated(friend: Person)
+    func friendWasCreated(friend: Friend)
 }
 
 class AddFriendViewController: UIViewController {
@@ -27,9 +27,14 @@ class AddFriendViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        nameTextField.delegate = self
+        hometownTextField.delegate = self
+        hobby1TextField.delegate = self
+        hobby2TextField.delegate = self
+        hobby3TextField.delegate = self
     }
+    
     @IBAction func cancelTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -43,7 +48,7 @@ class AddFriendViewController: UIViewController {
             !name.isEmpty,
             !hometown.isEmpty else { return }
         
-        var friend = Person(name: name, hometown: hometown, hobbies: [])
+        var friend = Friend(name: name, hometown: hometown, hobbies: [])
         
         if let hobby1 = hobby1TextField.text,
             !hobby1.isEmpty {
@@ -68,5 +73,12 @@ class AddFriendViewController: UIViewController {
 }
 
 extension AddFriendViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        return true
+    }
+    
     
 }
